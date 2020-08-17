@@ -3,9 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>登录</title>
+    <title>大事件-登录/注册</title>
+    <!-- 引入 LayUI 的样式 -->
+    <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
+    <!-- 引入自己的样式文件 -->
+    <link rel="stylesheet" href="/assets/css/login.css">
+
+    <!-- 引入 jQuery 的js文件 -->
+    <script src="/assets/lib/jquery.js"></script>
 </head>
 <body>
-    
+    <!-- logo 模块 -->
+    <div class="login_logo layui-main">
+        <img src="/assets/images/logo.png" alt="">
+    </div>
+
+    <!-- 登录、注册 模块 -->
+    <div class="loginAndReg_box">
+        <!-- title -->
+        <div class="login_title"></div>
+
+        <!-- 登录区域 -->
+        <div class="login_box">
+            <h2>登录</h2>
+            <a href="javascript:;" id="link_reg">去注册账号</a>
+        </div>
+
+        <!-- 注册区域 -->
+        <div class="reg_box">
+            <h2>注册</h2>
+            <a href="javascript:;" id="link_login">去登录</a>
+        </div>
+
+    </div>
+    <!-- 引入自己的js文件 -->
+    <script src="/assets/js/login.js"></script>
 </body>
 </html>
