@@ -45,7 +45,7 @@ $(function () {
         }
         $.ajax({
             method: "POST",
-            url: 'http://ajax.frontend.itheima.net/api/reguser',
+            url: '/api/reguser',
             data: data,
             success: function (res) {
                 // console.log(res);
@@ -73,7 +73,7 @@ $(function () {
         // 发送请求
         $.ajax({
             method: 'POST',
-            url: 'http://ajax.frontend.itheima.net/api/login',
+            url: '/api/login',
             data: $(this).serialize(),
             success: function (res) {
                 console.log(res);
