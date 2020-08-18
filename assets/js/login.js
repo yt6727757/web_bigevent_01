@@ -32,7 +32,7 @@ $(function () {
 
     // 获取到  `layer` 内置模块
     var layer = layui.layer;
-    // 监听注册标点提交事件
+    // 监听注册提交事件
     $('#reg_form').on('submit', function (e) {
         // 1.阻止表单默认提交
         e.preventDefault();
@@ -64,4 +64,28 @@ $(function () {
             }
         });
     });
+
+    // 监听登录提交事件
+    $('#login_form').on('submit', function (e) {
+        // 阻止默认提交
+        e.preventDefault();
+
+        // 发送请求
+        $.ajax({
+            method: 'POST',
+            url: 'http://ajax.frontend.itheima.net/api/login',
+            data: $(this).serialize(),
+            success: function (res) {
+                console.log(res);
+                if (res.status != 0) {
+                    return layer.msg(res.message);
+                }
+                layer.msg(res.message);
+                // 将token保存到localStorage中
+                localStorage.setItem('token', res.token);
+                // 跳转到index页面（主页）
+                location.href = '/index.html';
+            }
+        });
+    })
 });
