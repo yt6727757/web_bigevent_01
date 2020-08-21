@@ -6,7 +6,7 @@ $(function () {
     // 点击退出
     $('#exitLog').on('click', function () {
         layui.layer.confirm('确认登录？', { icon: 3, title: '提示' }, function (index) {
-            console.log(index);
+            // console.log(index);
 
             // 清空 localStroage 
             localStorage.removeItem('token');
@@ -34,7 +34,7 @@ function getUserInfo() {
         method: "GET",
         url: '/my/userinfo',
         success: function (res) {
-            console.log(res);
+            // console.log(res);
             if (res.status != 0) {
                 return;
             }

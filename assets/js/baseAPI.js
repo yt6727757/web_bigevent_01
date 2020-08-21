@@ -14,14 +14,17 @@ $.ajaxPrefilter(function (options) {
 
     // 拦截所有请求，认证身份信息
     options.complete = function (res) {
+        // console.log(res);
         if (res.responseJSON.status === 1 && res.responseJSON.message === "身份认证失败！") {
             
             layui.layer.msg(res.responseJSON.message + '请重新登录!');
             // 强制清空token
             localStorage.removeItem('token');
             // 强制跳转
-            location.href = '/login.html';
+            top.location.href = '/login.html';
 
+        }else if(res.status === 0){
+            layui.layer.msg('网络连接失败')
         }
     }
 });
