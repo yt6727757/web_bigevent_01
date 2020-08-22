@@ -69,6 +69,9 @@ $(function () {
                 // 初始化富文本编辑器
                 initEditor();
 
+                if (!res.data.cover_img) {
+                    return;
+                }
                 // 1. 初始化图片裁剪器
                 $image.cropper('destroy')
                     .attr('src', 'http://ajax.frontend.itheima.net' + res.data.cover_img)
