@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 引入 layui 样式文件 -->
+  <link rel="stylesheet" href="/assets/lib/layui/css/layui.css" />
+  <!-- 引入 自己的样式文件 -->
+  <link rel="stylesheet" href="/assets/css/article/art_list.css" />
+  <title>大事件-文章分类</title>
+
+</head>
+
+<body>
+  <!-- 所有文章分类 -->
+  <script type="text/html" id="tpl-cate-name">
+    <option value="">所有分类</option>
+    {{each data}}
+      <option value="{{$value.Id}}">{{$value.name}}</option>
+    {{/each}}
+  </script>
+  <!-- 文章列表 -->
+  <script type="text/html" id="tpl-tabList">
+    {{each data}}
+      <tr>
+        <td>{{$value.title}}</td>
+        <td>{{$value.cate_name}}</td>
+        <td>{{$value.pub_date|dataFormat}}</td>
+        <td>{{$value.state}}</td>
+        <td>
+            <button type="button" data-id="{{$value.Id}}"  class="layui-btn layui-btn-xs btnEdit">编辑</button>
+            <button type="button" data-id="{{$value.Id}}" class="layui-btn layui-btn-xs layui-btn-danger btnRemove">删除</button>
+        </td>
+      </tr>
+    {{/each}}
+  </script>
+  <!-- 卡片区 -->
+  <div class="layui-card">
+    <div class="layui-card-header">
+      <span>文章列表</span>
+    </div>
+    <div class="layui-card-body">
+      <!-- 搜索区 -->
+      <form class="layui-form" id="searchForm">
+        <div class="layui-form-item">
+          <div class="layui-inline">
+            <!-- 文章分类 -->
+            <select name="cate_name" id="cateList" >
+              <!-- <option value="">所有分类</option>
+              <option value="010">北京</option>
+              <option value="021">上海</option>
+              <option value="0571">杭州</option> -->
+            </select>
+          </div>
+          <div class="layui-inline">
+            <!-- 文章状态 -->
+            <select name="state" >
+              <option value="">所有状态</option>
+              <option value="已发布">已发布</option>
+              <option value="草稿">草稿</option>
+            </select>
+          </div>
+          <div class="layui-inline">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">筛选</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- 列表 -->
+      <table class="layui-table">
+        <colgroup>
+          <col>
+          <col width="150" />
+          <col width="180" />
+          <col width="150" />
+          <col width="150" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>文章标题</th>
+            <th>分类</th>
+            <th>发表时间</th>
+            <th>状态</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr>
+                        <td>新闻</td>
+                        <td>new</td>
+                        <td>new</td>
+                        <td>new</td>
+                        <td>
+                            <button type="button" class="layui-btn layui-btn-xs">编辑</button>
+                            <button type="button" class="layui-btn layui-btn-xs layui-btn-danger">删除</button>
+                        </td>
+                    </tr> -->
+        </tbody>
+      </table>
+      <!-- 分页 -->
+      <div id="listPage"></div>
+    </div>
+  </div>
+
+  <!-- 导入 jQuery js文件 -->
+  <script src="/assets/lib/jquery.js"></script>
+  <!-- 导入 自定义ajax拦截器文件 -->
+  <script src="/assets/js/baseAPI.js"></script>
+  <!-- 导入 LayUI js文件 -->
+  <script src="/assets/lib/layui/layui.all.js"></script>
+  <!-- 引入模板引擎 -->
+  <script src="/assets/lib/template-web.js"></script>
+  <!-- 导入 自己的 js文件 -->
+  <script src="/assets/js/article/art_list.js"></script>
+</body>
+
+<script>
+
+</script>
+
+</html>

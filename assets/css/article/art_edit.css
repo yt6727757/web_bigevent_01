@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    padding: 15px;
+    background-color: #f2f3f5;
+}
+
+.layui-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+form {
+    padding-right: 30px;
+    padding-top: 20px;
+}
+
+.cropper-box {
+    width: 400px;
+    height: 280px;
+}
+
+#image {
+    max-width: 400px;
+    /* This rule is very important, please do not ignore this! */
+    max-height: 280px;
+}
+
+/* 封面容器的样式 */
+.cover-box {
+    display: flex;
+}
+
+/* 左侧裁剪区域的样式 */
+.cover-left {
+    width: 400px;
+    height: 280px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.img-preview {
+    width: 200px;
+    height: 140px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.cropper-container {
+    display: flex;
+}
+
+.cropper-box {
+    margin-right: 15px;
+}
+
+.right-box {
+    text-align: center;
+}
